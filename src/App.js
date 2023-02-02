@@ -88,15 +88,15 @@ const App = ({signOut}) => {
             required
             variation="quiet"
           />
+          <View
+            name="image"
+            as="input"
+            type="file"
+            style={{ alignSelf: "end" }}
+          />
           <Button type="submit" variation="primary">Create Note</Button>
         </Flex>
       </View>
-      <View
-        name="image"
-        as="input"
-        type="file"
-        style={{ alignSelf: "end" }}
-      />
       <Heading level={2}>Current Notes</Heading>
       <View margin="3rem 0">
         {notes.map((note) => (
@@ -113,7 +113,7 @@ const App = ({signOut}) => {
             {note.image && (
               <Image
                 src={note.image}
-                alt={`visual aid for ${notes.name}`}
+                alt={`visual aid for ${note.name}`}
                 style={{ width: 400 }}
               />
             )}
